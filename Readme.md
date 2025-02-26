@@ -8,7 +8,10 @@ SampleAccountBank is a challenge project to showcase some basic views in SwiftUI
 
 <img src="SampleAccountBank/Screenshots/Task1.png" alt="drawing" width="200"/>
 
-- [ ] **(30 min)** When a user clicks on an account, show all the transactions in the account in a new view in order of most recent
+- [x] **(30 min)** When a user clicks on an account, show all the transactions in the account in a new view in order of most recent
+
+<img src="SampleAccountBank/Screenshots/Task2_1.png" alt="drawing" width="200"/>
+<img src="SampleAccountBank/Screenshots/Task2_2.png" alt="drawing" width="200"/>
 
 - [ ] **(30 min)** Create a View to allow users to favorite accounts, also only show favorited accounts on the main view
 

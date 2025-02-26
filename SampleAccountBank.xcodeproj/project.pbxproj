@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		7F0659B42D6F923F00FF6278 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 7F0659B32D6F923F00FF6278 /* Readme.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		7F0659872D6E62BF00FF6278 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		7F0659762D6E62BD00FF6278 /* SampleAccountBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleAccountBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0659862D6E62BF00FF6278 /* SampleAccountBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleAccountBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F0659902D6E62BF00FF6278 /* SampleAccountBankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleAccountBankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F0659B32D6F923F00FF6278 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -79,6 +84,7 @@
 				7F0659892D6E62BF00FF6278 /* SampleAccountBankTests */,
 				7F0659932D6E62BF00FF6278 /* SampleAccountBankUITests */,
 				7F0659772D6E62BD00FF6278 /* Products */,
+				7F0659B32D6F923F00FF6278 /* Readme.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F0659B42D6F923F00FF6278 /* Readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

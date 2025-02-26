@@ -13,22 +13,24 @@ struct AccountsView: View {
     var body: some View {
         NavigationStack {
             List(accountProvider.accounts) { account in
-                VStack(alignment: .leading) {
-                    Text(account.name).bold()
-                    ForEach(getMostRecentTransactions(account: account, transactions: accountProvider.transaction)) { transaction in
-                        HStack {
-                            Spacer()
-                            Text("$\(transaction.amount, specifier: "%.2f")")
-                            Text("\(transaction.date, style: .date)")
+                NavigationLink(destination: AccountsDetailView(account: account, transactions: getMostRecentTransactions(account: account, transactions: accountProvider.transaction, amount: 15)), label: {
+                    VStack(alignment: .leading) {
+                        Text(account.name).bold()
+                        ForEach(getMostRecentTransactions(account: account, transactions: accountProvider.transaction, amount: 3)) { transaction in
+                                HStack {
+                                    Spacer()
+                                    Text("$\(transaction.amount, specifier: "%.2f")")
+                                    Text("\(transaction.date, style: .date)")
+                            }
                         }
                     }
-                }
+                })
             }
             .navigationBarTitle("Accounts")
         }
     }
     
-    func getMostRecentTransactions(account: Account, transactions: [Transaction]) -> [Transaction] {
+    func getMostRecentTransactions(account: Account, transactions: [Transaction], amount: Int) -> [Transaction] {
         // get transactions that are associated with the account
         let accountTransactions = transactions.filter({ $0.accountID == account.id })
         
@@ -36,7 +38,7 @@ struct AccountsView: View {
         let sortedTransactions = accountTransactions.sorted(by: { $0.date > $1.date })
         
         // Get the 3 most recent transactions
-        let mostRecentTransactions = sortedTransactions.prefix(3)
+        let mostRecentTransactions = sortedTransactions.prefix(amount)
         
         return Array(mostRecentTransactions)
     }
