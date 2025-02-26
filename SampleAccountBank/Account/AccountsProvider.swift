@@ -37,8 +37,8 @@ struct Transaction: Identifiable {
 
 /// A mock provider for managing accounts and their transactions.
 class AccountProvider: ObservableObject {
-    /// A  array of accounts to notify subscribers of changes
-    var accounts: [Account] = []
+    /// A Published array of accounts to notify subscribers of changes
+    @Published var accounts: [Account] = []
     
     /// An array of transactions associated with the accounts
     var transaction: [Transaction] = []
@@ -80,5 +80,27 @@ class AccountProvider: ObservableObject {
             transactionCount = Int.random(in: 0...20) // Each account has a different number of transactions
         }
         return transactions
+    }
+    
+    /// Gets the most X recent transactions for an account, where x is specified by the amount parameter
+    func getMostRecentTransactions(account: Account, amount: Int) -> [Transaction] {
+        // get transactions that are associated with the account
+        let accountTransactions = transaction.filter({ $0.accountID == account.id })
+        
+        // Sort the transactions so we get the most recent ones
+        let sortedTransactions = accountTransactions.sorted(by: { $0.date > $1.date })
+        
+        // Get the X most recent transactions
+        let mostRecentTransactions = sortedTransactions.prefix(amount)
+        
+        return Array(mostRecentTransactions)
+    }
+    
+    /// Updates the specified account to switch the isFavorite variable
+    func updateFavoriteAccount(account: Account) {
+        // get the account specified
+        guard let index = accounts.firstIndex(of: account) else { return }
+        // Switch the isFavorite variable
+        accounts[index].isFavorite.toggle()
     }
 }
