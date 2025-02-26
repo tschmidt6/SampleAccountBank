@@ -4,7 +4,9 @@ SampleAccountBank is a challenge project to showcase some basic views in SwiftUI
 
 
 
-- [ ] **(30 min)** Create a View to show users their bank accounts, and the 3 most recent transactions in each account
+- [x] **(30 min)** Create a View to show users their bank accounts, and the 3 most recent transactions in each account
+
+<img src="SampleAccountBank/Screenshots/Task1.png" alt="drawing" width="200"/>
 
 - [ ] **(30 min)** When a user clicks on an account, show all the transactions in the account in a new view in order of most recent
 
